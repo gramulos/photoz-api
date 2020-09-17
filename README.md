@@ -23,4 +23,5 @@ $ npm install
 npm dev
 ```
 # 3. API collection
-There is an Postman API collection to this application. You just need to import this collection to postman. [Postman collection](https://github.com/gramulos/photoz-api/PhotoZ_API_v2.postman_collection.json)
+There is an Postman API collection to this application. You just need to import this collection to postman.
+It's located in project root folder and called [PhotoZ_API_v2.postman_collection.json](https://github.com/gramulos/photoz-api/blob/master/PhotoZ_API_v2.postman_collection.json)
