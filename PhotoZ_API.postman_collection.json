@@ -1,0 +1,153 @@
+{
+  "info": {
+    "_postman_id": "a1df8fe5-d017-4f00-8c47-210432e78099",
+    "name": "PhotoZ API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "description": "",
+      "item": [
+        {
+          "name": "User Register",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "9004fdf4-3bc1-400c-b46e-def504521e2e",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Your test name\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.message).to.eql('Successfully registered');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"username\": \"morisf1\",\n\t\"email\": \"moris1@moris.org.ua\",\n\t\"hashedPassword\": \"finmor1\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/auth/users",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "cfa22bae-0980-4d88-b292-1d979e3fa793",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "const jsonData = pm.response.json();",
+                  "",
+                  "pm.test(\"Token exist\", function () {",
+                  "    pm.expect(jsonData.message).to.eql('Successfully loged in');",
+                  "    pm.expect(jsonData).to.have.property('data');",
+                  "});",
+                  "",
+                  "pm.globals.set(\"boot_login\", jsonData.data);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"email\": \"moris1@moris.org.ua\",\n\t\"hashedPassword\": \"finmor1\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/auth/session",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "session"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "User",
+      "description": "",
+      "item": [
+        {
+          "name": "Self info",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{boot_login}}"
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "http://localhost:3000/api/v1/users/self",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "self"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

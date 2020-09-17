@@ -1,0 +1,391 @@
+{
+  "info": {
+    "_postman_id": "e0408ac7-f340-48d2-b8bb-f350d6995f80",
+    "name": "PhotoZ API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "_postman_id": "bbf941bc-44a9-4ab7-85a3-c8a5bddc5532",
+      "name": "http://localhost:3000/api/v1/auth/users",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"username\": \"abc\",\n    \"email\": \"abc@email.com\",\n    \"rehashedPassword\": \"12345\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/v1/auth/users",
+          "protocol": "http",
+          "host": [
+            "130",
+            "211",
+            "63",
+            "66"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "auth",
+            "users"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "c49ee2ad-6526-4db3-99dd-3602fa0180b2",
+      "name": "http://localhost:3000/api/v1/auth/session",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"email\": \"abc@email.com\",\n    \"hashedPassword\": \"12345\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/v1/auth/session",
+          "protocol": "http",
+          "host": [
+            "130",
+            "211",
+            "63",
+            "66"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "auth",
+            "session"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "15d1256a-15a2-4d5a-a275-12dec8730457",
+      "name": "http://localhost:3000/api/v1/media/content/image",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJuYW1lIjoiYWJjIn0sImlhdCI6MTUzMzQ4NDU1MywiZXhwIjoxNTMzNTA2MTUzfQ.n0f35VoUgzCB-_XDQJX4xcnPvNfp59aMR3wVFsUiNfY",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "multipart/form-data"
+          },
+          {
+            "key": "media",
+            "value": "",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "media",
+              "value": "",
+              "type": "file"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/v1/media/content/image",
+          "protocol": "http",
+          "host": [
+            "130",
+            "211",
+            "63",
+            "66"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "media",
+            "content",
+            "image"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "2c72b284-1313-4f69-992d-489239a1fac5",
+      "name": "http://localhost:3000/api/v1/media/",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJuYW1lIjoiYWJjIn0sImlhdCI6MTUzMzQ4NzIzMiwiZXhwIjoxNTMzNTA4ODMyfQ.mYdEam0IHEdmSXFxz48Fk5lZNpXp85ISmqpX_JdH15Y",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "media",
+            "value": "",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"contentId\": \"5b672894a0f61909fd6a86c6\",\n\t\"caption\": \"avc\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/v1/media/",
+          "protocol": "http",
+          "host": [
+            "130",
+            "211",
+            "63",
+            "66"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "media",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "4ea4ed71-c16f-4080-a23c-1f3e322c7c0b",
+      "name": "http://localhost:3000/api/v1/media/5b672c657e61150b52a9c4a6/comments/",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJuYW1lIjoiYWJjIn0sImlhdCI6MTUzMzQ4NzIzMiwiZXhwIjoxNTMzNTA4ODMyfQ.mYdEam0IHEdmSXFxz48Fk5lZNpXp85ISmqpX_JdH15Y",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "media",
+            "value": "",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"text\": \"aaaa\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/v1/media/5b672c657e61150b52a9c4a6/comments/",
+          "protocol": "http",
+          "host": [
+            "130",
+            "211",
+            "63",
+            "66"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "media",
+            "5b672c657e61150b52a9c4a6",
+            "comments",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "a211f7c5-76d9-4efa-be2d-eb9da8ffec08",
+      "name": "http://localhost:3000/api/v1/media/5b672c657e61150b52a9c4a6/comments/",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJuYW1lIjoiYWJjIn0sImlhdCI6MTUzMzQ4NzIzMiwiZXhwIjoxNTMzNTA4ODMyfQ.mYdEam0IHEdmSXFxz48Fk5lZNpXp85ISmqpX_JdH15Y",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "media",
+            "value": "",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"text\": \"aaaa\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/v1/media/5b672c657e61150b52a9c4a6/comments/",
+          "protocol": "http",
+          "host": [
+            "130",
+            "211",
+            "63",
+            "66"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "media",
+            "5b672c657e61150b52a9c4a6",
+            "comments",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "7d48f9cc-ab6a-43b4-846c-5b2d08976a71",
+      "name": "http://localhost:3000/api/v1/media/5b672c657e61150b52a9c4a6/",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJuYW1lIjoiYWJjIn0sImlhdCI6MTUzMzQ4NzIzMiwiZXhwIjoxNTMzNTA4ODMyfQ.mYdEam0IHEdmSXFxz48Fk5lZNpXp85ISmqpX_JdH15Y",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "media",
+            "value": "",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"text\": \"aaaa\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/v1/media/5b672c657e61150b52a9c4a6/",
+          "protocol": "http",
+          "host": [
+            "130",
+            "211",
+            "63",
+            "66"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "media",
+            "5b672c657e61150b52a9c4a6",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "5f689727-e69e-456f-8b7a-286af371281d",
+      "name": "http://localhost:3000/api/v1/media/",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJuYW1lIjoiYWJjIn0sImlhdCI6MTUzMzQ4NzIzMiwiZXhwIjoxNTMzNTA4ODMyfQ.mYdEam0IHEdmSXFxz48Fk5lZNpXp85ISmqpX_JdH15Y",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "media",
+            "value": "",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"text\": \"aaaa\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/v1/media/",
+          "protocol": "http",
+          "host": [
+            "130",
+            "211",
+            "63",
+            "66"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "media",
+            ""
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
