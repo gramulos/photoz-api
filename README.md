@@ -10,11 +10,13 @@ If you have questions, read this file carefully and you will find answers. If no
 # 1. Configuring .env file
 .env file is required for project to start working properly.
 1. Create copy of .env.template file and rename it to .env
-2. In project root folder, create `uploads` folder. Inside `uploads` folder create `images` folder.
-3. Set your own SESSION_SECRET, JWT_SECRET
-4. Change HOST_PORT if it differ than default 3000
+2. Set your own SESSION_SECRET, JWT_SECRET
+3. Change HOST_PORT if it differ than default 3000
 
-# 2. Project scripts
+# 2. Prepare folder for image uploads
+In project root folder, create `uploads` folder. Inside `uploads` folder create `images` folder.
+
+# 3. Project scripts
 1. If you just cloned the project then you need to install all dependencies by running command:
 ```sh
 $ npm install
@@ -23,6 +25,6 @@ $ npm install
 ```sh
 npm dev
 ```
-# 3. API collection
+# 4. API collection
 There is an Postman API collection to this application. You just need to import this collection to postman.
 It's located in project root folder and called [PhotoZ_API_v2.postman_collection.json](https://github.com/gramulos/photoz-api/blob/master/PhotoZ_API_v2.postman_collection.json)
