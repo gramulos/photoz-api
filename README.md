@@ -23,7 +23,7 @@ $ npm install
 ```
 2. In order to start project locally run command:
 ```sh
-npm dev
+npm run dev
 ```
 # 4. API collection
 There is an Postman API collection to this application. You just need to import this collection to postman.
